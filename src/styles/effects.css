@@ -1,0 +1,20 @@
+/* effects.css: animation layer (cursor, page curtain, rolling text, reveals) */
+.curtain{position:fixed;inset:0;z-index:100;background:var(--acc);transform:translateY(100%);pointer-events:none}
+.cur{position:fixed;left:0;top:0;z-index:90;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--acc);pointer-events:none;display:grid;place-items:center;transition:width .3s,height .3s,margin .3s,background .3s;color:var(--on);font:500 .8rem var(--b)}
+.cur span{opacity:0;transition:opacity .2s}
+.cur.big{width:92px;height:92px;margin:-46px 0 0 -46px}.cur.big span{opacity:1}
+@media(hover:none){.cur{display:none}}
+.rl{display:inline-block;overflow:hidden;vertical-align:bottom;height:1.45em;line-height:1.45em}
+.rl>span{display:block;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+a:hover>.rl>span,button:hover>.rl>span{transform:translateY(-100%)}
+.rv{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.roles a.hl{background:var(--acc);color:var(--bg)}
+.hero .name{will-change:transform}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.curtain{display:none}}
+
+/* Cursor glow on every page */
+.spot{display:none}
+.glow{position:fixed;left:0;top:0;width:760px;height:760px;margin:-380px 0 0 -380px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--acc) 24%,transparent),transparent 65%);pointer-events:none;z-index:0;opacity:0;transition:opacity .6s}
+.glow.on{opacity:1}
+main,footer{position:relative;z-index:1}
