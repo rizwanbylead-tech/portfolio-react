@@ -2,7 +2,7 @@
 .curtain{position:fixed;inset:0;z-index:100;background:var(--acc);transform:translateY(100%);pointer-events:none}
 .cur{position:fixed;left:0;top:0;z-index:90;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--acc);pointer-events:none;display:grid;place-items:center;transition:width .3s,height .3s,margin .3s,background .3s;color:var(--on);font:500 .8rem var(--b)}
 .cur span{opacity:0;transition:opacity .2s}
-.cur.big{width:92px;height:92px;margin:-46px 0 0 -46px}.cur.big span{opacity:1}
+.cur.big{width:60px;height:60px;margin:-30px 0 0 -30px;font-size:.72rem}.cur.big span{opacity:1}
 @media(hover:none){.cur{display:none}}
 .rl{display:inline-block;overflow:hidden;vertical-align:bottom;height:1.45em;line-height:1.45em}
 .rl>span{display:block;transition:transform .5s cubic-bezier(.2,.8,.2,1)}

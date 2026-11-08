@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-// Cursor dot, color glow that follows the mouse, and magnetic buttons.
+// Cursor dot, color glow that follows the mouse, glass-card highlight, and magnetic buttons.
 // Remove <Effects /> from App.jsx to turn them off.
 export default function Effects() {
   const cur = useRef(), glow = useRef(), label = useRef();
@@ -9,6 +9,13 @@ export default function Effects() {
     let x = innerWidth / 2, y = innerHeight / 2, cx = x, cy = y, gx = x, gy = y, raf;
     const move = (e) => {
       x = e.clientX; y = e.clientY; glow.current.classList.add("on");
+      // liquid-glass highlight follows the pointer inside cards
+      const g = e.target.closest && e.target.closest(".tile,.pj");
+      if (g) {
+        const gr = g.getBoundingClientRect();
+        g.style.setProperty("--mx", x - gr.left + "px");
+        g.style.setProperty("--my", y - gr.top + "px");
+      }
       const b = e.target.closest && e.target.closest(".btn");
       if (b) {
         const r = b.getBoundingClientRect();

@@ -14,6 +14,7 @@
 - src/components.jsx: small shared pieces (tiles, social icons, brand slider, rolling text).
 - src/Effects.jsx: cursor dot, color glow and magnetic buttons. Delete <Effects /> in App.jsx to turn them off.
 - src/styles/style.css: all colors (the six palette values at the top of :root), fonts and layout.
+  Near the bottom: "COMPACT WORK GRID" sets the size of work tiles and project thumbnails (change the 230px / 180px / 150px --min values or the aspect-ratio lines), and "LIQUID GLASS" holds the --gl-* values that control how frosted and bright the glass looks.
 - src/styles/effects.css: animation styles.
 
 ## YouTube videos

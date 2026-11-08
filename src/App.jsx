@@ -63,6 +63,7 @@ export default function App() {
 
   return (
     <>
+      <div className="orbs" aria-hidden="true"><i /><i /><i /></div>
       <header><div className="wrap">
         <a className="logo" href="#home">Rizwan Bin Yousuf</a>
         <nav aria-label="Main">

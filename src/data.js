@@ -1,7 +1,7 @@
 // data.js: everything you will edit most often lives in this file.
 
 // 1) WORK CATEGORIES: [slug, title, type, aspect, gradient-angle, hue]
-const C=[["photography","Photography","Stills","4/5","160deg",20],["documentary","Documentary","Film","16/9","200deg",200],["ovc","OVC","Film","16/9","160deg",260],["restaurant-reels","Restaurant Reels","Reels","9/16","180deg",350],["food-photography","Food Photography","Stills","4/5","150deg",30],["product-photography","Product Photography","Stills","4/5","210deg",170],["creative-reels","Creative Reels","Reels","9/16","170deg",300],["promotional-videos","Promotional Videos","Film","16/9","190deg",220],["short-films","Short Films","Film","16/9","140deg",120],["motion-design","Motion Design","Motion","16/9","175deg",190]];
+const C=[["photography","Photography","Stills","4/5","160deg",20],["ovc","OVC","Film","16/9","160deg",260],["restaurant-reels","Restaurant Reels","Reels","9/16","180deg",350],["food-photography","Food Photography","Stills","4/5","150deg",30],["creative-reels","Creative Reels","Reels","9/16","170deg",300],["promotional-videos","Promotional Videos","Film","16/9","190deg",220],["motion-design","Motion Design","Motion","16/9","175deg",190]];
 
 // 1b) YOUR PICTURE on the Home page: put your photo in the public folder as rizwan.jpg
 // (or change the path here). Until the file exists, the initials RBY are shown.
@@ -57,84 +57,84 @@ const ICONS={
 const PROJECTS={
   // Photography (list up to 5 photo paths in imgs:[...])
   "photography":[
-    {title:"Photography project 1", client:"Client name", imgs:[]},
-    {title:"Photography project 2", client:"Client name", imgs:[]},
-    {title:"Photography project 3", client:"Client name", imgs:[]},
-    {title:"Photography project 4", client:"Client name", imgs:[]},
-    {title:"Photography project 5", client:"Client name", imgs:[]},
-    {title:"Photography project 6", client:"Client name", imgs:[]},
-  ],
-  // Documentary (paste YouTube links)
-  "documentary":[
-    {title:"Documentary project 1", client:"Client name", url:""},
-    {title:"Documentary project 2", client:"Client name", url:""},
-    {title:"Documentary project 3", client:"Client name", url:""},
-    {title:"Documentary project 4", client:"Client name", url:""},
-    {title:"Documentary project 5", client:"Client name", url:""},
-    {title:"Documentary project 6", client:"Client name", url:""},
+    {title:"Landscapes", client:"Nature and Stills", imgs:["/photos/Landscape 1.jpg","/photos/Landscape 2.jpg","/photos/Landscape 3.jpg","/photos/Landscape 4.jpg","/photos/Landscape 5.jpg"]},
+    {title:"Landscapes", client:"Nature and Stills", imgs:["/photos/Landscape 6.jpg","/photos/Landscape 7.jpg","/photos/Landscape 8.jpg","/photos/Landscape 9.jpg"]},
+    {title:"Menvir", client:"Product Photography", imgs:["/photos/Menvir 1.png","/photos/Menvir 2.jpg","/photos/Menvir 3.png","/photos/Menvir 4.png","/photos/Menvir 5.jpg"]},
+    {title:"Khadi Ghar", client:"Panjabi", imgs:["/photos/Khadi Ghar 1.jpg","/photos/Khadi Ghar 2.jpg","/photos/Khadi Ghar 3.png","/photos/Khadi Ghar.png"]},
+    {title:"Matt BD", client:"Clothing", imgs:["/photos/MATT BD 1.jpg","/photos/MATT BD 2.png","/photos/MATT BD 3.jpg","/photos/MATT BD 4.jpg","/photos/MATT BD 5.png"]},
+    {title:"Omraan", client:"Panjabi", imgs:[]},
   ],
   // OVC (paste YouTube links)
   "ovc":[
-    {title:"OVC project 1", client:"Client name", url:""},
-    {title:"OVC project 2", client:"Client name", url:""},
-    {title:"OVC project 3", client:"Client name", url:""},
-    {title:"OVC project 4", client:"Client name", url:""},
-    {title:"OVC project 5", client:"Client name", url:""},
-    {title:"OVC project 6", client:"Client name", url:""},
+    {title:"BSRM Wires - SR Shipping", client:"BSRM Wires", url:"https://www.youtube.com/watch?v=e2wrb4tcBUY"},
+    {title:"BSRM Wires - Western Marine Shipyward", client:"BSRM Wires", url:"https://www.youtube.com/watch?v=ycKhRc7uEhk"},
+    {title:"PHP Float Glass Industries", client:"PHP", url:"https://www.youtube.com/watch?v=wSqRUpkiAds"},
+    {title:"Confidence Cement Testimonial", client:"Confidence Cement", url:"https://youtu.be/hsuAgzdEnxE"},
+    {title:"Chittagong Dry Dock Limited OVC", client:"Chittagong Dry Dock Limited", url:"https://www.youtube.com/watch?v=tKIQeeiLIkc"},
+    {title:"Airbell Helianthus", client:"Airbell", url:"https://youtu.be/lScqxDmv1AE"},
   ],
   // Restaurant Reels (paste YouTube links)
   "restaurant-reels":[
-    {title:"Restaurant Reels project 1", client:"Client name", url:""},
-    {title:"Restaurant Reels project 2", client:"Client name", url:""},
-    {title:"Restaurant Reels project 3", client:"Client name", url:""},
-    {title:"Restaurant Reels project 4", client:"Client name", url:""},
-    {title:"Restaurant Reels project 5", client:"Client name", url:""},
-    {title:"Restaurant Reels project 6", client:"Client name", url:""},
+    {title:"Flavours on Fleek", client:"Friolento", url:"https://youtube.com/shorts/LNaf9lCYfCo?feature=share"},
+    {title:"Whole Roasted Chicken", client:"Client name", url:"https://youtube.com/shorts/JRVlFQH_j68"},
+    {title:"Sizzler and Fried Rice", client:"Client name", url:"https://www.youtube.com/shorts/PWoJx-pmmg4"},
+    {title:"Macher Matamati", client:"Client name", url:"https://youtube.com/shorts/pONKSHYPTUg"},
+    {title:"Eat Chill & Repeat", client:"Mr. Purple", url:"https://youtube.com/shorts/eqCLe7Nl93c"},
+    {title:"The Centro", client:"The Centro", url:"https://www.youtube.com/shorts/0zFjzj2kY5Q"},
+    {title:"Snackza Ramadan Menu", client:"Snackza", url:"https://youtube.com/shorts/-zg3ACg1IbA?feature=share"},
+    {title:"Snackza Speedramp", client:"Snackza", url:"https://youtube.com/shorts/k6UvbtN-0oA?feature=share"},
+    {title:"Authencity Feels Like Home", client:"Lezettli", url:"https://youtube.com/shorts/9QICqN-BKVo?feature=share"},
+    {title:"Ogle Yemigi Teklifi", client:"Lezettli", url:"https://youtube.com/shorts/NFdN2uAWYGQ"},
+    {title:"Tokyo Terrace Reel 1", client:"Tokyo Terrace", url:"https://youtube.com/shorts/IqfgYaU5kdo"},
+    {title:"Tokyo Terrace Reel 2", client:"Tokyo Terrace", url:"https://youtube.com/shorts/fLJnzcOhN74"},
+    {title:"Tokyo Terrace Reel 3", client:"Tokyo Terrace", url:"https://youtube.com/shorts/bkrKFQGHx48"},
+    {title:"Ramadan Reel", client:"The Arrosto", url:"https://www.youtube.com/shorts/kfDJ7hhhVjk"},
+    {title:"Valentine Reel", client:"The Arrosto", url:"https://youtube.com/shorts/esBNcUkWNCU"},
   ],
   // Food Photography (list up to 5 photo paths in imgs:[...])
   "food-photography":[
-    {title:"Food Photography project 1", client:"Client name", imgs:[]},
-    {title:"Food Photography project 2", client:"Client name", imgs:[]},
-    {title:"Food Photography project 3", client:"Client name", imgs:[]},
-    {title:"Food Photography project 4", client:"Client name", imgs:[]},
-    {title:"Food Photography project 5", client:"Client name", imgs:[]},
-    {title:"Food Photography project 6", client:"Client name", imgs:[]},
-  ],
-  // Product Photography (list up to 5 photo paths in imgs:[...])
-  "product-photography":[
-    {title:"Product Photography project 1", client:"Client name", imgs:[]},
-    {title:"Product Photography project 2", client:"Client name", imgs:[]},
-    {title:"Product Photography project 3", client:"Client name", imgs:[]},
-    {title:"Product Photography project 4", client:"Client name", imgs:[]},
-    {title:"Product Photography project 5", client:"Client name", imgs:[]},
-    {title:"Product Photography project 6", client:"Client name", imgs:[]},
+    {title:"Food Photography - Cafe Milano", client:"Cafe Milano", imgs:["/photos/Cafe Milano 1.jpg","/photos/Cafe Milano 2.jpg","/photos/Cafe Milano 3.jpg","/photos/Cafe Milano 4.jpg","/photos/Cafe Milano 5.jpg"]},
+    {title:"Food Photography - Snackza", client:"Snackza", imgs:["/photos/Snackza1.jpg","/photos/Snackza2.jpg","/photos/Snackza3.jpg","/photos/Snackza4.jpg"]},
+    {title:"Food Photography - Busaba", client:"Busaba", imgs:["/photos/Busaba 1.jpg","/photos/Busaba 2.jpg","/photos/Busaba 3.jpg","/photos/Busaba 4.jpg","/photos/Busaba 5.jpg"]},
+    {title:"Food Photography - Zentable", client:"Zentable", imgs:["/photos/Zentable 10.jpg","/photos/Zentable 1.jpg","/photos/Zentable 2.jpg","/photos/Zentable 3.jpg","/photos/Zentable 4.jpg"]},
+     {title:"Food Photography - Zentable 2", client:"Zentable", imgs:["/photos/Zentable 7.jpg","/photos/Zentable 6.jpg","/photos/Zentable 5.jpg","/photos/Zentable 8.jpg","/photos/Zentable 9.jpg"]},
+    {title:"Food Photography - Amber Loaf", client:"Amber Loaf", imgs:["/photos/Amber Loaf 1.jpg","/photos/Amber Loaf 2.jpg","/photos/Amber Loaf 3.jpg","/photos/Amber Loaf 4.jpg","/photos/Amber Loaf 5.jpg"]},
+    {title:"Food Photography - Loreto ", client:"Loreto", imgs:["/photos/Loreto 1.jpg","/photos/Loreto 2.jpg","/photos/Loreto 3.jpg"]},
+    {title:"Food Photography - Ministop", client:"Ministop", imgs:["/photos/Ministop 2.jpg","/photos/Ministop 3.jpg","/photos/Ministop 1.jpg","/photos/Ministop 4.jpg","/photos/Ministop 5.jpg"]},
   ],
   // Creative Reels (paste YouTube links)
   "creative-reels":[
-    {title:"Creative Reels project 1", client:"Client name", url:""},
-    {title:"Creative Reels project 2", client:"Client name", url:""},
-    {title:"Creative Reels project 3", client:"Client name", url:""},
-    {title:"Creative Reels project 4", client:"Client name", url:""},
-    {title:"Creative Reels project 5", client:"Client name", url:""},
-    {title:"Creative Reels project 6", client:"Client name", url:""},
+    {title:"Disperse Beauty Soap", client:"Disperse Beauty", url:"https://youtube.com/shorts/w53V9nvAKeI?feature=share"},
+    {title:"Super Serum", client:"Disperse Beauty", url:"https://youtube.com/shorts/fAVsZ1pPyEM?feature=share"},
+    {title:"Secret Rosemary Oil", client:"Disperse Beauty", url:"https://youtube.com/shorts/9tMk5q3tC-Y?feature=share"},
+    {title:"Glow Essential Cream", client:"Disperse Beauty", url:"https://youtube.com/shorts/QSkWOTNHcEA?feature=share"},
+    {title:"Beard Oil", client:"Disperse Beauty", url:"https://youtube.com/shorts/9gmKTmhI5ho?feature=share"},
+    {title:"Hair Volume Powder - Product Intro", client:"Menvir", url:"https://youtube.com/shorts/wvugn4WDHvI?feature=share"},
+    {title:"Menvir Reel", client:"Menvir", url:"https://youtube.com/shorts/8YhjkTqu_KA?feature=share"},
+    {title:"Rosemary Oil - Product Intro", client:"Menvir", url:"https://youtube.com/shorts/pnghPQmqx4Y?feature=share"},
+    {title:"PHP ALuminium Ladder", client:"PHP", url:"https://youtube.com/shorts/qNcfm5jrI3U?feature=share"},
+    {title:"Epic Dental Care Reel 1", client:"Epic Dental Care", url:"https://youtube.com/shorts/j0kWn54Nq84?feature=share"},
+    {title:"Epic Dental Care Reel 2", client:"Epic Dental Care", url:"https://youtube.com/shorts/p-f_Mutp0LU?feature=share"},
+    {title:"Mathtia Talking Head", client:"Mathia", url:"https://youtube.com/shorts/vl0-ajnirPY?feature=share"},
+    {title:"Mathia Talking Head", client:"Mathia", url:"https://youtube.com/shorts/Wym-bGxhp-8?feature=share"},
+    {title:"Jubba Reel ", client:"Omran", url:"https://youtube.com/shorts/ZXWBFt9eQGg?feature=share"},
+    {title:"Jubba Reel ", client:"Omran", url:"https://youtube.com/shorts/5uCRw85TIt0?feature=share"},
+    {title:"Menvir Reel", client:"Menvir", url:"https://youtube.com/shorts/8YhjkTqu_KA?feature=share"},
+    {title:"Matt BD Reel", client:"Matt BD", url:"https://youtube.com/shorts/5AP0tlBbFlA?feature=share"},
+    {title:"Matt BD Reel", client:"Client name", url:"https://youtube.com/shorts/S0zH_u7cNds?feature=share"},
+    {title:"Matt BD Reel", client:"Client name", url:"https://youtube.com/shorts/gEb6nrUByTI"},
   ],
   // Promotional Videos (paste YouTube links)
   "promotional-videos":[
-    {title:"Promotional Videos project 1", client:"Client name", url:""},
-    {title:"Promotional Videos project 2", client:"Client name", url:""},
-    {title:"Promotional Videos project 3", client:"Client name", url:""},
-    {title:"Promotional Videos project 4", client:"Client name", url:""},
-    {title:"Promotional Videos project 5", client:"Client name", url:""},
-    {title:"Promotional Videos project 6", client:"Client name", url:""},
-  ],
-  // Short Films (paste YouTube links)
-  "short-films":[
-    {title:"Short Films project 1", client:"Client name", url:""},
-    {title:"Short Films project 2", client:"Client name", url:""},
-    {title:"Short Films project 3", client:"Client name", url:""},
-    {title:"Short Films project 4", client:"Client name", url:""},
-    {title:"Short Films project 5", client:"Client name", url:""},
-    {title:"Short Films project 6", client:"Client name", url:""},
+    {title:"Zentex Tour", client:"Zentex", url:"https://youtu.be/vNvr4G_gmzM"},
+    {title:"Fitness Saga Promo", client:"Fitness Saga", url:"https://youtu.be/H5uCMPiue-o"},
+    {title:"LB Town Hall Meeting", client:"Lead Bangladesh", url:"https://youtu.be/rGqcMtlYBdk"},
+    {title:"Tokyo Terrace Promo", client:"Tokyo Terrace", url:"https://youtu.be/6MdTksLESu8"},
+    {title:"The Grill House Promo", client:"The Grill House", url:"https://youtu.be/RylABcKaoc8"},
+    {title:"Idealist House Promo", client:"Idealist", url:"https://youtu.be/pZVkfTfzEAA"},
+    {title:"Idealist House Promo", client:"Idealist", url:"https://youtu.be/QZqokCxnAb4"},
+    {title:"LB Cox Promo", client:"Lead Bangladesh", url:"https://youtu.be/tCLmqPRbeJM"},
+    {title:"Epic Health Care Halishahar Promo", client:"Epic Health Care", url:"https://youtu.be/g3L8XtQYqnM"},
   ],
   // Motion Design (paste YouTube links)
   "motion-design":[

@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { C, B, PROJECTS, PHOTO } from "./data.js";
 import { Roll, Head, Socials, Marquee, Tile, Logo, PhotoCycle, ytid } from "./components.jsx";
 
 const skills = ["Photography", "Cinematography", "Editing", "Motion design", "Color grading", "Art direction"];
-const roles = [["photographer", "photography"], ["cinematographer", "ovc"], ["editor", "short-films"], ["motion designer", "motion-design"]];
+const roles = [["photographer", "photography"], ["cinematographer", "ovc"], ["editor", "creative-reels"], ["motion designer", "motion-design"]];
 
 export function Home() {
   const [k, setK] = useState(0);
@@ -55,7 +56,7 @@ export function Home() {
       </div></div>
       <section className="pad"><div className="wrap">
         <Head title="Featured work" text="Pick a category to see the projects inside." />
-        <div className="tiles">{C.slice(0, 6).map((c, i) => <Tile key={c[0]} c={c} i={i} />)}</div>
+        <div className="tiles t3">{C.slice(0, 6).map((c, i) => <Tile key={c[0]} c={c} i={i} />)}</div>
         <p style={{ marginTop: 30 }}><a className="btn ghost" href="#work"><Roll>All categories</Roll></a></p>
       </div></section>
       <section className="pad" style={{ borderTop: "1px solid var(--line)" }}><div className="wrap split">
@@ -79,8 +80,8 @@ export function Home() {
 
 export function About() {
   const disc = [
-    ["Photography", "Brand, product, food and documentary stills with clean light and a clear point of view.", [["photography", "Photography"], ["food-photography", "Food"], ["product-photography", "Product"], ["documentary", "Documentary"]]],
-    ["Cinematography", "Commercials, brand films and short films, lit, framed and directed on set.", [["ovc", "OVC"], ["promotional-videos", "Promotional videos"], ["short-films", "Short films"]]],
+    ["Photography", "Brand, product and food stills with clean light and a clear point of view.", [["photography", "Photography"], ["food-photography", "Food"]]],
+    ["Cinematography", "Commercials and brand films, lit, framed and directed on set.", [["ovc", "OVC"], ["promotional-videos", "Promotional videos"]]],
     ["Editing", "Story-first cuts, sound design and color grading for ads, reels and long form.", [["creative-reels", "Creative reels"], ["restaurant-reels", "Restaurant reels"]]],
     ["Motion design", "Titles, logo animation, explainers and product animation that move with purpose.", [["motion-design", "Motion design"]]],
   ];
@@ -130,7 +131,7 @@ export function About() {
 export function Work() {
   return (
     <section className="pad"><div className="wrap">
-      <Head title="Work" text="Ten categories. Open one to see every project inside." />
+      <Head title="Work" text="Seven categories. Open one to see every project inside." />
       <div className="tiles">{C.map((c, i) => <Tile key={c[0]} c={c} i={i} />)}</div>
     </div></section>
   );
@@ -189,6 +190,13 @@ export function Cat({ slug }) {
   const stills = c[2] === "Stills";
   const [lb, setLb] = useState(null);
   const step = (d) => setLb((x) => x && x.imgs ? { ...x, n: (x.n + d + x.imgs.length) % x.imgs.length } : x);
+  useEffect(() => { document.body.style.overflow = lb ? "hidden" : ""; return () => { document.body.style.overflow = ""; }; }, [!!lb]);
+  const sx = useRef(null);
+  const swipe = (e) => {
+    if (sx.current == null) return;
+    const d = e.changedTouches[0].clientX - sx.current; sx.current = null;
+    if (Math.abs(d) > 50) step(d < 0 ? 1 : -1);
+  };
   useEffect(() => {
     const f = (e) => {
       if (e.key === "Escape") setLb(null);
@@ -201,8 +209,8 @@ export function Cat({ slug }) {
   return (
     <section className="pad"><div className="wrap">
       <a className="back" href="#work">← All work</a>
-      <Head title={c[1]} text={"Selected " + c[1].toLowerCase() + " projects. Replace these with your own."} />
-      <div className="proj">
+      <Head title={c[1]} />
+      <div className="proj" data-r={c[3].replace("/", "x")}>
         {(PROJECTS[slug] || []).map((p, n) => {
           const id = ytid(p.url);
           const imgs = (p.imgs || (p.img ? [p.img] : [])).filter(Boolean).slice(0, 5);
@@ -231,24 +239,42 @@ export function Cat({ slug }) {
         <a href={"#work-" + prev[0]}><Roll>{"← " + prev[1]}</Roll></a>
         <a href={"#work-" + next[0]}><Roll>{next[1] + " →"}</Roll></a>
       </div>
-      {lb && (
+      {lb && createPortal(
         <div className="lb" onClick={(e) => e.target === e.currentTarget && setLb(null)}>
           <button className="x" aria-label="Close" onClick={() => setLb(null)}>✕</button>
-          <div className={"lbin" + (lb.v ? " v" : "")}>
+          {lb.imgs && lb.imgs.length > 1 && (
+            <>
+              <button className="lbarrow prev" onClick={() => step(-1)} aria-label="Previous photo">←</button>
+              <button className="lbarrow next" onClick={() => step(1)} aria-label="Next photo">→</button>
+            </>
+          )}
+          <div className={"lbin" + (lb.v ? " v" : "") + (lb.imgs ? " pic" : "")}
+               onTouchStart={(e) => (sx.current = e.touches[0].clientX)} onTouchEnd={swipe}>
             {lb.id
               ? <iframe src={`https://www.youtube-nocookie.com/embed/${lb.id}?autoplay=1&rel=0`} title={lb.t}
                         allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen />
-              : <img src={lb.imgs[lb.n]} alt={lb.t} />}
+              : <img src={lb.imgs[lb.n]} alt={lb.t} onClick={() => step(1)} />}
           </div>
           {lb.imgs && lb.imgs.length > 1 && (
-            <div className="lbnav">
-              <button onClick={() => step(-1)} aria-label="Previous photo">←</button>
-              <span>{lb.n + 1} / {lb.imgs.length}</span>
-              <button onClick={() => step(1)} aria-label="Next photo">→</button>
-            </div>
+            <>
+              <div className="lbnav">
+                <button onClick={() => step(-1)} aria-label="Previous photo">←</button>
+                <span>{lb.n + 1} / {lb.imgs.length}</span>
+                <button onClick={() => step(1)} aria-label="Next photo">→</button>
+              </div>
+              <div className="lbthumbs">
+                {lb.imgs.map((src, k) => (
+                  <button key={k} className={k === lb.n ? "on" : ""} aria-label={"Photo " + (k + 1)}
+                          onClick={() => setLb((x) => ({ ...x, n: k }))}>
+                    <img src={src} alt="" />
+                  </button>
+                ))}
+              </div>
+            </>
           )}
           <p>{lb.t}{lb.id && <a href={"https://youtu.be/" + lb.id} target="_blank" rel="noopener">Open on YouTube</a>}</p>
-        </div>
+        </div>,
+        document.body
       )}
     </div></section>
   );
